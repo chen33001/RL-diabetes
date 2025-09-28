@@ -23,8 +23,8 @@ RL-diabetes/
 ```bash
 git clone https://github.com/chen33001/RL-diabetes.git
 cd RL-diabetes
-```bash
-2. Local Setup (Python 3.10)
+
+### 2. Local Setup (Python 3.10)
 Create virtual environment:
 ```bash
 python3.10 -m venv venv
