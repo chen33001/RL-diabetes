@@ -1,0 +1,16 @@
+# Core scientific stack
+numpy
+pandas
+matplotlib
+
+# Reinforcement learning environments
+gymnasium
+
+# Deep learning framework (choose torch for RL experiments)
+torch
+
+# Jupyter notebook for experiments
+jupyter
+
+# Testing
+pytest
