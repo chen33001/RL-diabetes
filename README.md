@@ -14,26 +14,21 @@ This project explores **Reinforcement Learning (RL)** to generate **personalized
 ---
 
 ## 📂 Project Structure
-RL-diabetes/
-│── notebooks/ # Jupyter notebooks for experiments
-│── src/ # Core RL source code
-│── tests/ # Unit tests
-│── main.py # Entry point for running the project
-│── requirements.txt # Python dependencies
-│── Dockerfile # Docker environment setup
-│── .dockerignore # Ignore unnecessary files in Docker
-│── .gitignore # Ignore unnecessary files in Git
-│── README.md # Documentation
-
-yaml
-Copy code
-
----
-
-## ⚡ Getting Started
-
-### 1. Clone the repository
 ```bash
+RL-diabetes/
+│── notebooks/        # Jupyter notebooks for experiments
+│── src/              # Core RL source code
+│── tests/            # Unit tests
+│── main.py           # Entry point for running the project
+│── requirements.txt  # Python dependencies
+│── Dockerfile        # Docker environment setup
+│── .dockerignore     # Ignore unnecessary files in Docker
+│── .gitignore        # Ignore unnecessary files in Git
+│── README.md         # Documentation
+⚡ Getting Started
+1. Clone the repository
+bash
+Copy code
 git clone https://github.com/chen33001/RL-diabetes.git
 cd RL-diabetes
 2. Local Setup (Python 3.10)
@@ -104,8 +99,11 @@ Copy code
 
 ---
 
-Would you like me to now also generate a **ready-to-paste `requirements.txt` + `Dockerfile`** so your repo can actually be run (`python main.py` or `docker run`)?
+⚡ Key Fixes:
+- Used ` ```bash ` for shell commands instead of `yaml`.  
+- Ensured **Project Structure** is in a fenced code block so it shows as tree view.  
+- Split commands into separate blocks for clarity.  
 
+---
 
-
-
+👉 Do you want me to also prepare a **starter `requirements.txt` and `Dockerfile`** so that after cloning, you (or others) can run the project immediately without setup errors?
