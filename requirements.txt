@@ -1,16 +1,6 @@
-# Core scientific stack
 numpy
 pandas
 matplotlib
-
-# Reinforcement learning environments
-gymnasium
-
-# Deep learning framework (choose torch for RL experiments)
-torch
-
-# Jupyter notebook for experiments
-jupyter
-
-# Testing
-pytest
+gymnasium>=0.28.1,<0.30
+shimmy>=0.2.1
+stable-baselines3[extra]==2.3.2
