@@ -1,111 +1,89 @@
-# 📌 RL-diabetes
-*A Reinforcement Learning (RL) agent for personalized daily exercise & therapy planning in diabetes management.*  
+# RL-diabetes
+
+A reinforcement learning agent that proposes daily exercise plans for people living with diabetes. It ships with a custom Gymnasium environment, PPO training script, notebooks for experiments, and CI workflows.
 
 ---
 
-## 📖 Overview
-Diabetes management often requires careful planning of **daily physical activity** and **therapy adherence**.  
-This project explores **Reinforcement Learning (RL)** to generate **personalized recommendations** that optimize both **adherence** and **health outcomes**.  
-
-- ⚙️ **Language**: Python 3.10  
-- 📦 **Environment**: Dockerized for reproducibility  
-- 🖥️ **Editor**: VS Code  
+## Overview
+- Language: Python 3.12
+- RL stack: Stable Baselines3 (PPO) + Gymnasium
+- Tooling: Docker image, pytest suite, GitHub Actions
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```
 RL-diabetes/
-│── notebooks/        # Jupyter notebooks for experiments
-│── src/              # Core RL source code
-│── tests/            # Unit tests
-│── main.py           # Entry point for running the project
-│── requirements.txt  # Python dependencies
-│── Dockerfile        # Docker environment setup
-│── .dockerignore     # Ignore unnecessary files in Docker
-│── .gitignore        # Ignore unnecessary files in Git
-│── README.md         # Documentation
+|- notebooks/         # Exploratory notebooks and experiments
+|- src/               # Custom Gymnasium environments and utilities
+|- tests/             # Unit tests (pytest)
+|- main.py            # Entry point for running the PPO agent
+|- requirements.txt   # Python dependencies
+|- Dockerfile         # Containerised runtime environment
+|- .github/workflows/ # CI pipeline definition
+|- README.md          # Project documentation
 ```
 
 ---
 
-## ⚡ Getting Started
-
-### 1. Clone the repository
+## Getting Started (Python 3.12)
 ```bash
 git clone https://github.com/chen33001/RL-diabetes.git
 cd RL-diabetes
-```
 
----
+python3.12 -m venv .venv
+source .venv/bin/activate        # macOS / Linux
+.venv\Scripts\Activate.ps1       # Windows PowerShell
 
-### 2. Local Setup (Python 3.10)
-
-Create virtual environment:
-```bash
-python3.10 -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
-```
-
-Install dependencies:
-```bash
+pip install --upgrade pip
 pip install -r requirements.txt
+
+python main.py                   # trains PPO on the diabetes environment
 ```
 
-Run the project:
-```bash
-python main.py
-```
+> **PyTorch wheels for Python 3.12**  
+> If PyTorch is unavailable for your platform by default, install it first by following the matrix at https://pytorch.org/get-started/locally/ (select Python 3.12), then rerun `pip install -r requirements.txt`.
 
 ---
 
-### 3. Docker Setup
-
-Build the Docker image:
+## Docker Workflow
 ```bash
 docker build -t rl-diabetes .
-```
-
-Run the container:
-```bash
 docker run -it --rm rl-diabetes
 ```
 
-Run Jupyter Notebook inside Docker:
+To expose Jupyter Notebook from the container:
 ```bash
 docker run -it -p 8888:8888 rl-diabetes \
   jupyter notebook --ip=0.0.0.0 --no-browser --allow-root
 ```
-
-Then open [http://localhost:8888](http://localhost:8888) in your browser.
+Open http://localhost:8888 and use the token printed in the container logs.
 
 ---
 
-## 🧪 Testing
+## Testing
 ```bash
-pytest tests/
+pytest
 ```
 
 ---
 
-## 📊 Roadmap
-- [ ] Define environment for diabetes daily planning  
-- [ ] Implement RL agent (baseline Q-learning)  
-- [ ] Extend with Deep RL (DQN, PPO)  
-- [ ] Integrate smart device data (steps, heart rate, glucose)  
-- [ ] Deploy with API (FastAPI/Flask)  
+## Roadmap
+- [ ] Broaden agent portfolio (DQN, SAC)
+- [ ] Enrich environment with nutrition and insulin dynamics
+- [ ] Integrate wearable-device data loaders
+- [ ] Provide FastAPI service for inference
 
 ---
 
-## 🤝 Contributing
-1. Fork the project  
-2. Create a feature branch (`git checkout -b feature/new-feature`)  
-3. Commit your changes (`git commit -m "feat: add new feature"`)  
-4. Push to the branch (`git push origin feature/new-feature`)  
-5. Open a Pull Request  
+## Contributing
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/my-feature`).
+3. Commit your work (`git commit -m "feat: add my feature"`).
+4. Push the branch (`git push origin feature/my-feature`).
+5. Open a pull request.
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+## License
+This project is released under the [MIT License](LICENSE).
